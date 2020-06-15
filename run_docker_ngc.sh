@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #X11
-#xhost + #local:root
+xhost +local:root
 
 #Mount Data folders
 #sudo mount 192.168.0.15:/volume1/DL_data /DL_data
@@ -12,10 +12,13 @@ sudo docker run --name l4t_deepstream \
 --net=host \
 --runtime nvidia  \
 -w /opt/nvidia/deepstream/deepstream-5.0 \
--v /tmp/.X11-unix/:/tmp/.X11-unix \
 --mount type=bind,src=/home/intflow/works,dst=/works \
+--env="DISPLAY" --volume="$HOME/.Xauthority:/root/.Xauthority:rw" \
+--privileged \
+--ipc=host \
 -it --rm intflow/deepstream:xnx
 
+#-v /tmp/.X11-unix/:/tmp/.X11-unix \
 #-e DISPLAY=$DISPLAY \
 #--privileged \
 #--ipc=host \
