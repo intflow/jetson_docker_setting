@@ -15,7 +15,7 @@ sudo docker run --name l4t_deepstream \
 --mount type=bind,src=/home/intflow/works,dst=/works \
 --privileged \
 --ipc=host \
--it --rm intflow/deepstream:xnx
+-it --rm intflow/deepstream:xnx_lvl1
 
 #--env="DISPLAY" --volume="$HOME/.Xauthority:/root/.Xauthority:rw" \
 #-v /tmp/.X11-unix/:/tmp/.X11-unix \
