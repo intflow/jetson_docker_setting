@@ -8,7 +8,7 @@
 mkdir ~intflow/works
 
 #Run Dockers for voice conversion (tf1 + pytorch)
-sudo docker run --name l4t_deepstream \
+sudo docker run --name l4t_deepstream_xnx_lvl1 \
 --net=host \
 --runtime nvidia  \
 -w /opt/nvidia/deepstream/deepstream-5.0 \
