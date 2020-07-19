@@ -9,15 +9,15 @@
 #sudo apt install -y libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev;
 #sudo apt install -y libv4l-dev v4l-utils qv4l2 v4l2ucp libdc1394-22-dev
 
-#curl -L https://github.com/opencv/opencv/archive/4.2.0.zip -o opencv-4.2.0.zip
-#curl -L https://github.com/opencv/opencv_contrib/archive/4.2.0.zip -o opencv_contrib-4.2.0.zip
-#unzip opencv-4.2.0.zip
-#unzip opencv_contrib-4.2.0.zip
-cd opencv-4.2.0/
+curl -L https://github.com/opencv/opencv/archive/4.1.1.zip -o opencv-4.1.1.zip
+curl -L https://github.com/opencv/opencv_contrib/archive/4.1.1.zip -o opencv_contrib-4.1.1.zip
+unzip opencv-4.1.1.zip
+unzip opencv_contrib-4.1.1.zip
+cd opencv-4.1.1/
 mkdir release
 cd release/
 cmake -D WITH_CUDA=ON \
--D OPENCV_EXTRA_MODULES_PATH=../../opencv_contrib-4.2.0/modules \
+-D OPENCV_EXTRA_MODULES_PATH=../../opencv_contrib-4.1.1/modules \
 -D WITH_GSTREAMER=ON \
 -D WITH_LIBV4L=ON \
 -D WITH_OPENGL=ON \
@@ -31,3 +31,4 @@ cmake -D WITH_CUDA=ON \
 -D ENABLE_PRECOMPILED_HEADERS=OFF ..
 make -j4
 sudo make install
+sudo ldconfig
