@@ -17,7 +17,7 @@ sudo docker run --name l4t_nano_cam \
 --mount type=bind,src=/home/intflow/works,dst=/works \
 --privileged \
 --ipc=host \
--it --rm intflow/deepstream:xnx_BT1
+-it --rm intflow/deepstream:nano_cam
 
 #-it --rm nvcr.io/nvidia/deepstream-l4t:5.0-dp-20.04-samples
 
